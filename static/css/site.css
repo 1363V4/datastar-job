@@ -1,1 +1,141 @@
 @import url("gold.css") layer(gold);
+
+:root {
+    --m: 1.3rem
+}
+
+/* THANK YOU GGBotNet!
+<3 */
+
+@font-face {
+    font-family: 'Eightgon';
+    src: url('/static/fonts/Eightgon.ttf');
+}
+
+body {
+    font-family: 'Eightgon', sans-serif;
+}
+
+#bg {
+    position: absolute;
+    width: 100dvw;
+    height: 100dvh;
+    z-index: -1;
+    object-fit: cover;
+}
+
+main {
+    color: white;
+    backdrop-filter: blur(2px);
+    filter: drop-shadow(2px 2px 4px #ffffff42);
+    div:first-child {
+        transform: rotate3d(1, 1, 0, 20deg);
+    }
+}
+
+div:has(img) {
+    border: 5px solid rgba(238, 130, 238, 0.5);
+    border-radius: 1rem;
+    width: 8rem;
+    aspect-ratio: 1/1;
+    overflow: hidden;
+    img {
+        width: 100%;
+        aspect-ratio: 1/1;
+        filter: drop-shadow(10px 2px 6px #ffffff42);
+    }
+}
+
+h1 {
+    color: violet;
+}
+
+@keyframes slide_up {
+    from {
+        opacity: 0;
+        transform: translateY(40px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes slide_out_up {
+    from {
+        opacity: 1;
+        transform: translateY(0);
+    }
+    to {
+        opacity: 0;
+        transform: translateY(-40px);
+    }
+}
+
+.welcome {
+    background: rgba(238, 130, 238, 0.5);
+    opacity: 0;
+    padding: var(--m);
+    border-radius: var(--s);
+    pointer-events: none;
+    line-height: normal;
+    &[msg1] {
+        animation: 
+            slide_up .5s linear 1s forwards,
+            slide_out_up .5s linear 3s forwards;
+    }
+    &[msg2] {
+        animation: 
+            slide_up .5s linear 4s forwards,
+            slide_out_up .5s linear 9s forwards;
+    }
+    &[msg3] {
+        animation: 
+            slide_up .5s linear 10s forwards,
+            slide_out_up .5s linear 15s forwards;
+    }
+    &[msg4] {
+        animation: 
+            slide_up .5s linear 16s forwards,
+            slide_out_up .5s linear 20s forwards;
+    }
+}
+
+input {
+    background: linear-gradient(270deg, violet, indigo, violet);
+    background-size: 1400% 1400%;
+    animation: rainbow-move 1s linear infinite;
+    border: 2px solid violet;
+    border-radius: var(--s);
+    outline: none;
+    color: transparent;
+    background-clip: text;
+}
+
+input[delayed] {
+    opacity: 0;
+    animation:
+        slide_up 1s linear 21s forwards,
+        rainbow-move 1s linear infinite;
+}
+
+@keyframes rainbow-move {
+    0% {
+        background-position: 0% 50%;
+    }
+    100% {
+        background-position: 100% 50%;
+    }
+}
+
+.messages {
+    max-width: min(600px, 80dvw);
+    max-height: 42dvh;
+    overflow-y: scroll;
+    margin-bottom: var(--m);
+    scrollbar-width: none; /* Firefox */
+    -ms-overflow-style: none;  /* IE and Edge */
+}
+.messages::-webkit-scrollbar {
+    display: none; /* Chrome, Safari, Opera */
+}

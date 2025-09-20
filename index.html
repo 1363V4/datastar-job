@@ -8,7 +8,38 @@
     <link rel="stylesheet" href="/static/css/site.css">
     <script type="module" src="/static/js/datastar.js"></script>
 </head>
-<body class="gf gc" data-on-load="@get('/load')">
-    <img src="/static/img/rocket.png">
-    <span id="time"></span>
+<body class="gf gc">
+    <!-- THANK YOU PRESSMASTER! <3 -->
+    <video id="bg" src="/static/mp4/bg.mp4" autoplay loop muted playsinline></video>
+    <main class="gc">
+        <div class="gc ggd10 gm-m">
+            <div class="gz gc">
+                <div class="gc">
+                    <p class="welcome gc gt-l" msg1>Salut</p>
+                </div>
+                <div class="gc">
+                    <p class="welcome gc gt-l" msg2>Tu cherches un CTO ?</p>
+                </div>
+                <div class="gc">
+                    <p class="welcome gc gt-l" msg3>Je suis le <b>double numérique</b> du CTO de tes rêves.</p>
+                </div>
+                <div class="gc">
+                    <p class="welcome gc gt-l" msg4>Pose-moi des questions, tu verras !</p>
+                </div>
+                <form
+                data-on-submit="@post('/message')">
+                    <input
+                    delayed
+                    id="answer"
+                    data-bind-question
+                    type="text" placeholder="Pose une question"
+                    class="gp-s">
+                </form>
+            </div>
+        </div>
+        <div class="gz gc">
+            <img src="/static/img/avatar_small.png">
+        </div>
+        <h1>LGI</h1>
+    </main>
 </body>
