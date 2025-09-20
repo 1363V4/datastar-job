@@ -1,1 +1,1 @@
-Template for starting a Sanic & Datastar app quickly
+test
