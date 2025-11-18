@@ -80,31 +80,31 @@ h1 {
     pointer-events: none;
     line-height: normal;
     &[msg1] {
-        animation: 
+        animation:
             slide_up .5s linear 1s forwards,
             slide_out_up .5s linear 3s forwards;
     }
     &[msg2] {
-        animation: 
+        animation:
             slide_up .5s linear 4s forwards,
-            slide_out_up .5s linear 9s forwards;
+            slide_out_up .5s linear 6s forwards;
     }
     &[msg3] {
-        animation: 
-            slide_up .5s linear 10s forwards,
-            slide_out_up .5s linear 15s forwards;
+        animation:
+            slide_up .5s linear 7s forwards,
+            slide_out_up .5s linear 10s forwards;
     }
     &[msg4] {
-        animation: 
-            slide_up .5s linear 16s forwards,
-            slide_out_up .5s linear 20s forwards;
+        animation:
+            slide_up .5s linear 11s forwards,
+            slide_out_up .5s linear 13s forwards;
     }
 }
 
 input {
     background: linear-gradient(270deg, violet, indigo, violet);
     background-size: 1400% 1400%;
-    animation: rainbow-move 1s linear infinite;
+    animation: rainbow-move 10s linear infinite;
     border: 2px solid violet;
     border-radius: var(--s);
     outline: none;
@@ -115,8 +115,8 @@ input {
 input[delayed] {
     opacity: 0;
     animation:
-        slide_up 1s linear 21s forwards,
-        rainbow-move 1s linear infinite;
+        slide_up 1s linear 14s forwards,
+        rainbow-move 10s linear infinite;
 }
 
 @keyframes rainbow-move {
@@ -129,7 +129,8 @@ input[delayed] {
 }
 
 .messages {
-    max-width: min(600px, 80dvw);
+    max-width: min(400px, 80dvw);
+    font-size: 120%;
     max-height: 42dvh;
     overflow-y: scroll;
     margin-bottom: var(--m);
